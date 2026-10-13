@@ -1,0 +1,3 @@
+opencv-python
+numpy
+pillow   # server.py --mock only; the real server runs on the GPU node

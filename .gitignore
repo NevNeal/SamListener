@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.DS_Store
+
+# what listen.py writes
+recordings/
+snapshots/
+devices/
+headless.png
+
+# SLURM output
+logs/*
+!logs/.gitkeep
