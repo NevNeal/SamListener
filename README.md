@@ -30,22 +30,17 @@ checkout, and expects to sit next to it:
 └── SamListener/     this repo
 ```
 
-Copy the repo up from the Mac (the repo is private, so a plain `git clone` on
-HiPerGator would ask for credentials):
+Clone it there, then start the job:
 
 ```bash
-rsync -av --exclude .venv --exclude .git --exclude recordings --exclude snapshots \
-    ~/Documents/code/repos/SamListener/ \
-    hipergator:blue_guralnick/neal.nevyn/SamListener/
-```
-
-Then, on HiPerGator:
-
-```bash
-cd ~/blue_guralnick/neal.nevyn/SamListener
+cd ~/blue_guralnick/neal.nevyn
+git clone https://github.com/NevNeal/SamListener.git
+cd SamListener
 sbatch slurm/listener.sbatch
 tail -f logs/sam_listener-*.out
 ```
+
+Later, `git pull` in that folder picks up changes.
 
 When the model has loaded, the log prints the two commands for the Mac, with
 this job's node name and a fresh token filled in:
